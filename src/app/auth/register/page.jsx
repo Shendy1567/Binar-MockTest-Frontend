@@ -1,7 +1,9 @@
-export default function Register() {
+import RegisterForm from "@/components/Register/RegisterForm";
+
+export default function Home() {
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <main>
+      <RegisterForm />
+    </main>
   );
 }
