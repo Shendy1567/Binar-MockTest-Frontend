@@ -2,13 +2,13 @@
 
 import React from "react";
 import Navbar from "@/components/Navigation/navbar";
-import ListTable from "@/components/todo-list/ListTable";
+import CreateList from "@/components/CreateList/CreateList";
 
-export default function TodoList() {
+export default function home() {
   return (
     <main>
       <Navbar />
-      <ListTable />
+      <CreateList />
     </main>
   );
 }
