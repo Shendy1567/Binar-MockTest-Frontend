@@ -14,22 +14,21 @@ export default function Home() {
     token ? setUsername(jwtDecode(token).username) : setUsername("");
   };
 
+  const welcomeContent = token && username ? `Welcome Back ${username}` : "";
+
   useEffect(() => {
     isLoggedIn();
-  });
+  }, [token]);
 
   const linkHref = token ? "/todo-list" : "/auth/login";
 
   return (
     <main>
       <Navbar />
-      {token ? (
-        <h1 className="mt-5 text-xl mx-auto text-center flex flex-col items-center justify-center">
-          Welcome Back {username}
-        </h1>
-      ) : (
-        <></>
-      )}
+
+      <a className="mt-5 text-xl mx-auto text-center flex flex-col items-center justify-center">
+        {welcomeContent}
+      </a>
 
       <div className="mt-5 w-8/12 text-xl mx-auto text-center flex flex-col items-center justify-center">
         To-do lists are more than just a collection of tasks; they are a
@@ -45,7 +44,7 @@ export default function Home() {
         task, we're one step closer to success. So, don't just list your to-dos,
         do your lists and watch your ambitions transform into reality.
         <Link href={linkHref} className="mt-5">
-          <button className="inline-flex items-center bg-[#1960EA] text-white rounded-lg border-0 py-2 px-4 mx-3 md:mt-0">
+          <button className="inline-flex items-center bg-[#1960EA] text-white rounded-lg border-0 py-4 px-5 mx-3 md:mt-0">
             START NOW
           </button>
         </Link>
