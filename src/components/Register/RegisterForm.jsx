@@ -155,7 +155,7 @@ export default function Register() {
               value={state.pin}
               onChange={handleChange}
               required
-              placeholder="Type your Pin"
+              placeholder="Type your 6 number Pin"
             />
           </div>
           <button
